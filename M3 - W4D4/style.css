@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.test{
+    color: red;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    border-radius: 50%;
+}  
+
+.shadow:hover {
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0);
+}
+/* necessario per dare colore e centrare il main */
+#main{
+    width: 100%;
+    height: 100vh;
+    background-color: #141414;
+}
+
+.center-main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+}
+/* style navbar */
+/* colore navbar */
+nav.navbar{
+    background-color: #141414;
+}
+/* logo navbar */
+img.navbar-brand{
+    width: 110px;
+    cursor: pointer;
+}
+/* colre e grandezza icone a destra */
+nav.navbar form {
+    color: white;  
+    width: 200px;
+}
+
+/* per mettere il cursore su tutte le icone a destra */
+nav.navbar form>*{
+    cursor: pointer;
+}
+
+/* grandezza delle scritte a destra */
+nav.navbar form i, nav.navbar form span{
+    font-size: large;
+} 
+
+/* img user destro */
+nav.navbar form div.dropdown img{
+    width: 30px;
+}
+/* bottone vicino alla navbar */
+nav.navbar form div.dropdown button{
+    color: white;
+    padding: 4px;
+}
+/* pulizia preset style del dropdown */
+nav.navbar form div.dropdown ul.dropdown-menu{
+    background-color: #141414;
+    --bs-dropdown-link-hover-bg: none;
+    --bs-dropdown-link-active-bg: red;
+}
+/* colore dei test dropdown */
+nav.navbar form div.dropdown ul.dropdown-menu li a{
+    color: white;
+}
+/* piccolo effetto hover per renderlo più friendly */
+a.dropdown-item:hover{
+    text-decoration: underline;
+}
