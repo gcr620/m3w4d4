@@ -4,42 +4,28 @@
     box-sizing: border-box;
 }
 body{
-    width: 100%;
-    height: 100vh;
+   min-height: 100vh;
+   min-width: 100%;
 }
 
 .test{
     color: red;
 }
-
-.center{
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-
-.flex-center{
-    justify-content: center;
-    align-items: center;
-}
-.circle{
-    border-radius: 50%;
-}  
-
-.shadow:hover {
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0);
-}
 /* necessario per dare colore e centrare il main */
 #main{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #141414;
 }
 
 .center-main{
-    margin-left: auto;
-    margin-right: auto;
-    width: 97%;
+    width: 100%;
+    background-color: #141414;
+    min-height: 100vh;
+}
+.center2{
+    margin: 0px auto; 
+    width: 95%;
 }
 /* style navbar */
 /* colore navbar */
@@ -47,14 +33,29 @@ nav.navbar{
     background-color: #141414;
 }
 /* logo navbar */
-img.navbar-brand{
+.logo{
     width: 110px;
     cursor: pointer;
+    position: relative;
+    right: 10px;
 }
-/* colre e grandezza icone a destra */
+/* colore e grandezza icone a destra */
 nav.navbar form {
     color: white;  
     width: 200px;
+}
+/* modifica posizione icone navbar a una certa grandezza (sembrava più carino) */
+@media screen and (max-width: 1199px) {
+    ul.navbar-nav{
+        flex-direction: row;
+        justify-content: space-around;
+        gap:10px;
+        text-align: center;
+    }
+    nav.navbar form{
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* per mettere il cursore su tutte le icone a destra */
@@ -89,4 +90,65 @@ nav.navbar form div.dropdown ul.dropdown-menu li a{
 /* piccolo effetto hover per renderlo più friendly */
 a.dropdown-item:hover{
     text-decoration: underline;
+}
+/* tipo + genere */
+/* stile bottone */
+div.shows-genre button{
+    --bs-btn-bg: black;
+    --bs-btn-border-color: white;
+    border-radius: 0%;
+    padding: 4px 10px;
+
+}
+/* distanza tra bottone e freccia */
+div.shows-genre button::after{
+    margin-left: 1.8em;
+}
+/* dropdown genres */
+div.shows-genre div.dropdown ul.dropdown-menu{
+    background-color: black;
+    --bs-dropdown-link-hover-bg: none;
+    --bs-dropdown-link-active-bg: red;
+}
+/* lista serie */
+.list-cont{
+    width: 100%;
+    height: auto;
+}
+/* pag degli elementi delle liste */
+div.shows-list{
+    column-gap: 5px;
+}
+/* fa in modo che la grandezza e l'altezza cambi + tansition */
+div.shows-list img{
+    max-width: auto;
+    min-width: auto;
+    height: auto;
+    margin: 0px px;
+    padding: 0;
+    transition: transform 0.5s ease .1s;
+}
+/* transizione per renderle pù grandi con l'hover */
+div.shows-list img:hover{
+    transform: scale(1.2) ;
+}
+/* modifica la dimenzione con i viewport in modo da regolare meglio le immagini con i telefono/tablet */
+@media (min-width: 768px) and (max-width: 991.98px){
+    div.shows-list img{
+        width: 49%;
+    }
+}
+@media (max-width: 767px){
+    div.shows-list{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+    }
+    div.shows-list img{
+        width: 90%;
+        transition: transform 0.5s ease .1s;
+    }
+    div.shows-list img:hover{
+        transform: scale(1.1) ;
+    }
 }
